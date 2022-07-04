@@ -1,0 +1,65 @@
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label>
+            Movie id:
+            <input type="text" formControlName="movieId">
+        </label>
+    </div>
+
+    <div>
+        <label>
+            Movie title:
+            <input type="text" formControlName="movieTitle">
+        </label>
+    </div>
+
+
+    <div formGroupName="boxType">
+            <div>
+                <label>
+                    Movie:
+                    <input type="text" formControlName="movie">
+                </label>
+            </div>
+    
+            <div>
+                <label>
+                    Serie:
+                    <input type="text" formControlName="serie">
+                </label>
+            </div>
+    
+            <div>
+                <label>
+                    Episode:
+                    <input type="text" formControlName="episode">
+                </label> 
+            </div>
+    </div>
+
+    <div>
+        <label>
+            Season:
+            <input type="number" formControlName="releaseDate">
+        </label>
+    </div>
+
+        <div formGroupName="card">
+            <div>
+                <label>
+                    Complete
+                    <input type="text" formControlName="complete">
+                </label> 
+            </div>
+
+            <div>
+                <label>
+                   Short
+                    <input type="text" formControlName="short">
+                </label> 
+            </div>
+
+        </div>
+
+    <button type="submit" [disabled]="!searchForm.valid">Search Movies</button>
+</form>
